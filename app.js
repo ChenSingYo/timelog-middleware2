@@ -2,11 +2,15 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 const timelog = require('./timelog')
+const delay = 100
 
 // disable favicon.ico request
 app.get('/favicon.ico', (req, res) => res.status(204).end())
 
 app.use(timelog)
+app.use((req, res, next) => {
+  setTimeout(() => next(), delay)
+})
 
 app.get('/', (req, res) => {
   res.send(`<a href="/">List Todo</a>
