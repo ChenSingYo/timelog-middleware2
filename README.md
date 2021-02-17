@@ -1,6 +1,6 @@
 ## time log middleware
 
-show time log while every request is send
+main funciton :log request time and duration of response while the user sends every request
 
 ## Prerequisites
 
